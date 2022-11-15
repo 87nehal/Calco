@@ -6,7 +6,7 @@
 - Kotlin
 - Simples
 - Fast
-- 
+
 > Credits : https://github.com/Keelar/ExprK
 
 This text you see here is *actually- written in Markdown! To get a feel
@@ -15,7 +15,7 @@ watch the results in the right.
 
 ## Screenshot
 
-![alt text](https://i.imgur.com/7uepKC6.png | width=100)
+<img src="https://i.imgur.com/7uepKC6.png" height="200px">
 
 ## License
 
