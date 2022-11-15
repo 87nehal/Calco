@@ -15,7 +15,7 @@ watch the results in the right.
 
 ## Screenshot
 
-![alt text](https://i.imgur.com/7uepKC6.png)
+![alt text](https://i.imgur.com/7uepKC6.png | width=100)
 
 ## License
 
