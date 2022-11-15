@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/backwall" />
+
+    <TextView
+        android:textColor="@color/white"
+        android:textColorHint="#60FFFFFF"
+        android:id="@+id/output"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:fontFamily="@font/poppins"
+        android:gravity="bottom"
+        android:hint="..."
+        android:padding="5dp"
+        android:textAlignment="viewEnd"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/copy"
+        tools:ignore="RtlCompat" />
+
+    <ImageView
+        android:id="@+id/details"
+        android:padding="10dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:clickable="true"
+        android:src="@drawable/i"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/copy"
+        android:padding="10dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:clickable="true"
+        android:src="@drawable/copywhite"
+        app:layout_constraintBottom_toBottomOf="@+id/output"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/openb"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="25dp"
+        android:background="@drawable/ripplebutton"
+        android:text="("
+        android:textColor="#FB2576"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/input"
+        app:layout_constraintEnd_toStartOf="@id/closeb"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/closeb"
+        android:layout_marginStart="5dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/ripplebutton"
+        android:text=")"
+        android:textColor="#FB2576"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/input"
+        app:layout_constraintStart_toEndOf="@id/openb" />
+
+    <EditText
+        android:textColor="@color/white"
+        android:id="@+id/input"
+        android:inputType="numberDecimal"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#00000000"
+        android:gravity="bottom"
+        android:textAlignment="viewEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/output"
+        tools:ignore="RtlCompat" />
+
+    <!--Buttons-->
+    <!--Line 1 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/line2"
+        app:layout_constraintTop_toBottomOf="@+id/input">
+
+        <Button
+            android:id="@+id/cls"
+            android:background="@drawable/ripplebutton"
+            android:textSize="20dp"
+            android:textColor="#FB2576"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:text="AC"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/pow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/pow"
+            android:background="@drawable/ripplebutton"
+            android:textSize="25dp"
+            android:textColor="#EEF1FF"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:text="^"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/per"
+            app:layout_constraintStart_toEndOf="@id/cls"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/per"
+            android:background="@drawable/ripplebutton"
+            android:textSize="25dp"
+            android:textColor="#EEF1FF"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:text="%"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/div"
+            app:layout_constraintStart_toEndOf="@id/pow"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/div"
+            android:background="@drawable/ripplebutton"
+            android:textColor="#EEF1FF"
+            android:textSize="25dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:text="/"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/per"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--Line 2 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@id/line2"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/line3"
+        app:layout_constraintTop_toBottomOf="@+id/line1">
+
+        <Button
+            android:id="@+id/num7"
+            android:background="@drawable/ripplebutton"
+            android:textSize="25dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:text="7"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/num8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/num8"
+            android:background="@drawable/ripplebutton"
+            android:textSize="25dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:text="8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/num9"
+            app:layout_constraintStart_toEndOf="@id/num7"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/num9"
+            android:background="@drawable/ripplebutton"
+            android:textSize="25dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:text="9"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/multi"
+            app:layout_constraintStart_toEndOf="@id/num8"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/multi"
+            android:background="@drawable/ripplebutton"
+            android:textSize="25dp"
+            android:textColor="#EEF1FF"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:text="*"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/num9"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Line 3 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@id/line3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/line4"
+        app:layout_constraintTop_toBottomOf="@+id/line2">
+
+        <Button
+            android:id="@+id/num4"
+            android:background="@drawable/ripplebutton"
+            android:textSize="25dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:text="4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/num5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/num5"
+            android:background="@drawable/ripplebutton"
+            android:textSize="25dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:text="5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/num6"
+            app:layout_constraintStart_toEndOf="@id/num4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/num6"
+            android:background="@drawable/ripplebutton"
+            android:textSize="25dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:text="6"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/plus"
+            app:layout_constraintStart_toEndOf="@id/num5"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/plus"
+            android:background="@drawable/ripplebutton"
+            android:textSize="25dp"
+            android:textColor="#EEF1FF"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:text="+"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/num6"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--Line 4 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/line4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/line5"
+        app:layout_constraintTop_toBottomOf="@+id/line3">
+
+        <Button
+            android:id="@+id/num1"
+            android:background="@drawable/ripplebutton"
+            android:textSize="25dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:text="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/num2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/num2"
+            android:background="@drawable/ripplebutton"
+            android:textSize="25dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:text="2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/num3"
+            app:layout_constraintStart_toEndOf="@id/num1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/num3"
+            android:background="@drawable/ripplebutton"
+            android:textSize="25dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:text="3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/minus"
+            app:layout_constraintStart_toEndOf="@id/num2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/minus"
+            android:background="@drawable/ripplebutton"
+            android:textSize="25dp"
+            android:textColor="#EEF1FF"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:text="-"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/num3"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--Line 5 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/line5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line4">
+
+        <Button
+            android:id="@+id/dot"
+            android:background="@drawable/ripplebutton"
+            android:textSize="25dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:text="."
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/num0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/num0"
+            android:background="@drawable/ripplebutton"
+            android:textSize="25dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:text="0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/back"
+            app:layout_constraintStart_toEndOf="@id/dot"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/back"
+            android:background="@drawable/ripplebutton"
+            android:textSize="25dp"
+            android:layout_width="75dp"
+            android:text="x"
+            android:layout_height="75dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/equal"
+            app:layout_constraintStart_toEndOf="@id/num0"
+            app:layout_constraintTop_toTopOf="parent">
+        </Button>
+
+        <Button
+            android:id="@+id/equal"
+            android:background="@drawable/ripplebutton"
+            android:textColor="#D8E9A8"
+            android:textSize="25dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:text="="
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/back"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
