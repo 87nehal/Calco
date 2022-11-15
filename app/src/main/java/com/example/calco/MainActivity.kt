@@ -124,7 +124,7 @@ class MainActivity : AppCompatActivity() {
     }
     private fun showDialog(title: String) {
         val openURL = Intent(Intent.ACTION_VIEW)
-        val builder = AlertDialog.Builder(this)
+        val builder = AlertDialog.Builder(this,R.style.AlertDialogTheme)
         //set title for alert dialog
         builder.setTitle(title)
         //set message for alert dialog
