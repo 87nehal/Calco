@@ -7,12 +7,9 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/backwall" />
-
+        android:src="#0F0E0E"/>
     <TextView
         android:textColor="@color/white"
         android:textColorHint="#60FFFFFF"
